@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "PublishedDate": {
+      "type": "date",
+      "required": true
+    },
+    "Author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
+    },
+    "Cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "CoverColor": {
+      "type": "string",
+      "required": true,
+      "regex": "/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/"
+    },
+    "Content": {
+      "type": "blocks",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "ReadingTime": {
+      "type": "integer",
+      "required": true
+    },
+    "Tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "TitleForRelatedArticlesSection": {
+      "type": "string",
+      "default": "More interesting articles"
+    },
+    "RelatedArticles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}

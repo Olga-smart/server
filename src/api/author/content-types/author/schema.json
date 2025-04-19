@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "singularName": "author",
+    "pluralName": "authors",
+    "displayName": "Author"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Duty": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
