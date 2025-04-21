@@ -7,7 +7,10 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "img-src": ["'self'", "data:", "blob:", "https://res.cloudinary.com"],
+          "connect-src": ["'self'", "https:"],
+          "img-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
+          "media-src": ["'self'", "data:", "blob:", "res.cloudinary.com"],
+          upgradeInsecureRequests: null,
         },
       },
     },
