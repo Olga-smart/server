@@ -11,25 +11,20 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Slug": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
-    "PublishedDate": {
+    "publishedDate": {
       "type": "date",
       "required": true
     },
-    "Author": {
+    "author": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::author.author"
     },
-    "Cover": {
+    "cover": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -38,36 +33,42 @@
         "files"
       ]
     },
-    "CoverColor": {
-      "type": "string",
-      "required": true,
-      "regex": "/^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/"
-    },
-    "Content": {
+    "content": {
       "type": "blocks",
       "required": true
     },
-    "Description": {
+    "description": {
       "type": "text",
       "required": true
     },
-    "ReadingTime": {
+    "readingTime": {
       "type": "integer",
       "required": true
     },
-    "Tags": {
+    "tags": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::tag.tag"
     },
-    "TitleForRelatedArticlesSection": {
+    "titleForRelatedArticlesSection": {
       "type": "string",
       "default": "More interesting articles"
     },
-    "RelatedArticles": {
+    "relatedArticles": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "coverColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color"
     }
   }
 }
