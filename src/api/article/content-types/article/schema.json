@@ -33,10 +33,6 @@
         "files"
       ]
     },
-    "content": {
-      "type": "blocks",
-      "required": true
-    },
     "description": {
       "type": "text",
       "required": true

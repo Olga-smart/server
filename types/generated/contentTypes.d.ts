@@ -382,7 +382,6 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
-    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
     contentBlocks: Schema.Attribute.DynamicZone<
       [
         'article-body.quote',
