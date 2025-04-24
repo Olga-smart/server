@@ -77,7 +77,8 @@
         "article-body.lead",
         "article-body.image",
         "article-body.code",
-        "article-body.advertising"
+        "article-body.advertising",
+        "article-body.text"
       ]
     }
   }

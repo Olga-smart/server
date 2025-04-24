@@ -79,6 +79,17 @@ export interface ArticleBodyQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface ArticleBodyText extends Struct.ComponentSchema {
+  collectionName: 'components_article_body_texts';
+  info: {
+    displayName: 'Text';
+    icon: 'book';
+  };
+  attributes: {
+    text: Schema.Attribute.Blocks;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -87,6 +98,7 @@ declare module '@strapi/strapi' {
       'article-body.image': ArticleBodyImage;
       'article-body.lead': ArticleBodyLead;
       'article-body.quote': ArticleBodyQuote;
+      'article-body.text': ArticleBodyText;
     }
   }
 }

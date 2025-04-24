@@ -390,6 +390,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
         'article-body.image',
         'article-body.code',
         'article-body.advertising',
+        'article-body.text',
       ]
     >;
     cover: Schema.Attribute.Media<'images' | 'files'> &
