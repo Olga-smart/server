@@ -2,18 +2,19 @@
   "collectionName": "components_article_body_images",
   "info": {
     "displayName": "Image",
-    "icon": "picture"
+    "icon": "picture",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "width": {
       "type": "enumeration",
@@ -21,18 +22,23 @@
         "content",
         "screen"
       ],
-      "required": true
+      "required": true,
+      "default": "screen"
     },
     "padding": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "stretch": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "backgroundColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "string",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    },
+    "caption": {
+      "type": "blocks"
     }
   }
 }

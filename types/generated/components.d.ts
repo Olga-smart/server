@@ -30,18 +30,20 @@ export interface ArticleBodyCode extends Struct.ComponentSchema {
 export interface ArticleBodyImage extends Struct.ComponentSchema {
   collectionName: 'components_article_body_images';
   info: {
+    description: '';
     displayName: 'Image';
     icon: 'picture';
   };
   attributes: {
-    backgroundColor: Schema.Attribute.String &
-      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    backgroundColor: Schema.Attribute.String;
+    caption: Schema.Attribute.Blocks;
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
-    padding: Schema.Attribute.Boolean;
-    stretch: Schema.Attribute.Boolean;
+    padding: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    stretch: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     width: Schema.Attribute.Enumeration<['content', 'screen']> &
-      Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'screen'>;
   };
 }
 
