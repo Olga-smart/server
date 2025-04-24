@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_article_body_quotes",
+  "info": {
+    "displayName": "Quote",
+    "icon": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "width": {
+      "type": "enumeration",
+      "enum": [
+        "content",
+        "screen"
+      ],
+      "required": true,
+      "default": "screen"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "medium",
+        "big",
+        "with photo"
+      ],
+      "default": "medium",
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "text": {
+      "type": "blocks",
+      "required": true
+    },
+    "authorName": {
+      "type": "blocks",
+      "required": true
+    },
+    "authorDuty": {
+      "type": "blocks"
+    }
+  }
+}

@@ -69,6 +69,16 @@
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "required": true,
       "customField": "plugin::color-picker.color"
+    },
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "article-body.quote",
+        "article-body.lead",
+        "article-body.image",
+        "article-body.code",
+        "article-body.advertising"
+      ]
     }
   }
 }

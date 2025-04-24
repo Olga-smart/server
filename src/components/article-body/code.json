@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_article_body_codes",
+  "info": {
+    "displayName": "Code",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "code": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

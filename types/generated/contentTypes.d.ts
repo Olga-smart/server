@@ -383,6 +383,15 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   attributes: {
     author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    contentBlocks: Schema.Attribute.DynamicZone<
+      [
+        'article-body.quote',
+        'article-body.lead',
+        'article-body.image',
+        'article-body.code',
+        'article-body.advertising',
+      ]
+    >;
     cover: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     coverColor: Schema.Attribute.String &

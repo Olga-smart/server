@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_article_body_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "width": {
+      "type": "enumeration",
+      "enum": [
+        "content",
+        "screen"
+      ],
+      "required": true
+    },
+    "padding": {
+      "type": "boolean"
+    },
+    "stretch": {
+      "type": "boolean"
+    },
+    "backgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}
